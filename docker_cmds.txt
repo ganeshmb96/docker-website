@@ -1,0 +1,126 @@
+: 1636823627:0;docker built -t getting-started .
+: 1636823668:0;docker build -t getting-started .
+: 1636837232:0;docker run -dp 3000:3000 getting-started
+: 1636837409:0;docker
+: 1636837435:0;docker -V
+: 1636837441:0;docker --version
+: 1636837465:0;docker ps
+: 1636837930:0;docker pull nginx
+: 1636837978:0;docker images
+: 1636838057:0;docker run nginx:latest
+: 1636838142:0;docker container ls
+: 1636838273:0;docker run -d nginx:latest
+: 1636838287:0;docker container ls
+: 1636838312:0;docker ps
+: 1636838487:0;docker stop 9259b6318b47
+: 1636838491:0;docker ps
+: 1636838520:0;docker run -dp 8080:80 nginx:latest
+: 1636838526:0;docker ps
+: 1636838589:0;docker stop 2d566f04f438
+: 1636838808:0;docker start 2d566f04f438
+: 1636838824:0;docker stop 2d566f04f438
+: 1636838837:0;docker ps
+: 1636838864:0;docker ps --help
+: 1636838876:0;docker ps --all
+: 1636838963:0;docker rm 0f10ef1fd3ac
+: 1636838965:0;docker ps --all
+: 1636838977:0;docker rm 9259b6318b47
+: 1636838979:0;docker ps --all
+: 1636839038:0;docker rm 4e30696de337 7ba4896df401
+: 1636839095:0;docker rm $(docker ps -aq)
+: 1636839100:0;docker ps --all
+: 1636839114:0;docker run -dp 8080:80 nginx:latest
+: 1636839149:0;docker ps -aq
+: 1636839157:0;docker rm 3aeb94f8e6f1
+: 1636839176:0;docker stop 3aeb94f8e6f1
+: 1636839183:0;docker rm 3aeb94f8e6f1
+: 1636839190:0;docker ps -a
+: 1636839295:0;docker run --name first_docker -dp 8080:80 nginx:latest
+: 1636839301:0;docker ps -a
+: 1636839326:0;docker stop first_docker
+: 1636840509:0;docker ps {{.ID}}
+: 1636840525:0;docker ps || {{.ID}}
+: 1636840531:0;docker ps || grep {{.ID}}
+: 1636840540:0;docker ps
+: 1636840559:0;docker start first_docker
+: 1636840561:0;docker ps || grep {{.ID}}
+: 1636840617:0;docker ps --format || grep {{.ID}}
+: 1636840640:0;docker ps --format="{{.ID}}"
+: 1636840646:0;docker ps "{{.ID}}"
+: 1636840657:0;docker ps || grep "{{.ID}}"
+: 1636840799:0;docker run --help
+: 1636840900:0;docker ps -a
+: 1636840913:0;docker rm first_docker
+: 1636840923:0;docker stop first_docker
+: 1636840926:0;docker rm first_docker
+: 1636840929:0;docker ps -a
+: 1636840988:0;docker run --name second_docker -dp 8080:80 nginx:latest
+: 1636841130:0;rm docker_website
+: 1636841217:0;docker ps -a
+: 1636841235:0;docker stop second_docker
+: 1636841242:0;docker rm second_docker
+: 1636841259:0;cd docker_website
+: 1636841356:0;docker run --name second_docker -v ${pwd}:/usr/share/nginx/html:ro -dp 8080:80 nginx:latest
+: 1636841418:0;docker stop second_docker
+: 1636841427:0;docker rm second_docker
+: 1636841446:0;docker run --name second_docker -v ${pwd}:/usr/share/nginx/html:ro -dp 8080:80 nginx
+: 1636841490:0;docker stop second_docker
+: 1636841494:0;docker rm second_docker
+: 1636841508:0;docker run --name docker_website -v ${pwd}:/usr/share/nginx/html:ro -dp 8080:80 nginx
+: 1636841542:0;docker run --name docker_website -v $(pwd):/usr/share/nginx/html:ro -dp 8080:80 nginx:latest
+: 1636841558:0;docker stop docker_website
+: 1636841565:0;docker rm docker_website
+: 1636841568:0;docker run --name docker_website -v $(pwd):/usr/share/nginx/html:ro -dp 8080:80 nginx:latest
+: 1636841587:0;docker ps -aq
+: 1636841659:0;docker exec -help
+: 1636841724:0;docker exec -it docker_website bash
+: 1636841828:0;docker stop docker_website
+: 1636841834:0;docker rm docker_website
+: 1636841849:0;docker run --name docker_website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
+: 1636841866:0;docker exec -it docker_website zsh
+: 1636841875:0;docker exec -it docker_website bash
+: 1636841929:0;cd docker_website
+: 1636842272:0;mv . ~/docker_website
+: 1636842293:0;mv *. ~/docker_website
+: 1636842305:0;mv .* ~/docker_website
+: 1636842370:0;mv * ~/docker_website
+: 1636842834:0;mv * ~/docker_website
+: 1636842852:0;docker ps -a
+: 1636842889:0;docker exec -it docker_website bash
+: 1636843151:0;docker ps -a
+: 1636843167:0;docker stop docker_website
+: 1636843173:0;docker rm docker_website
+: 1636843194:0;mv * ~/docker_website
+: 1636843231:0;docker run --name docker_website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
+: 1636844636:0;docker ps -a
+: 1636844642:0;docker stop docker_website
+: 1636844647:0;docker rm docker_website
+: 1636844658:0;docker ps -a
+: 1636889496:0;docker --help
+: 1636889504:0;docker run --help
+: 1636889542:0;docker run --name docker_website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
+: 1636889559:0;docker run --name docker_website_copy -v $(pwd):/usr/share/nginx/html -dp 8081:80 nginx:latest
+: 1636889577:0;docker stop docker_website_copy
+: 1636889583:0;docker rm docker_website_copy
+: 1636889625:0;docker run --help
+: 1636889699:0;docker run --name docker_website_copy --volumes-from docker_website -dp 8081:80 nginx:latest
+: 1636889717:0;docker ps -a
+: 1636889800:0;docker stop docker_website_copy docker_website
+: 1636889809:0;docker rm docker_website_copy docker_website
+: 1636889812:0;docker ps -a
+: 1636890478:0;docker build --help
+: 1636892787:0;docker image ls
+: 1636892831:0;docker build --tag docker_website:latest .
+: 1636892877:0;docker image ls
+: 1636892926:0;docker ps -a
+: 1636893007:0;docker run --name website -dp 8080:80 docker_website:latest
+: 1636893014:0;docker ps -a
+: 1636893042:0;docker stop website
+: 1636901916:0;docker image ls
+: 1638015840:0;cd docker_website
+: 1638015885:0;cat ~/.zsh_history | grep docker
+: 1638015909:0;cat ~/.zsh_history | grep docker | touch docker_cmds.txt
+: 1638015921:0;vim docker_cmds.txt
+: 1638015936:0;cat ~/.zsh_history | grep docker > touch docker_cmds.txt
+: 1638015938:0;vim docker_cmds.txt
+: 1638015985:0;cat ~/.zsh_history | grep docker > docker_cmds.txt
