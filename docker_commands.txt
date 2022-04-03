@@ -1,0 +1,181 @@
+docker built -t getting-started .
+docker build -t getting-started .
+docker run -dp 3000:3000 getting-started
+docker
+docker -V
+docker --version
+docker ps
+docker pull nginx
+docker images
+docker run nginx:latest
+docker container ls
+docker run -d nginx:latest
+docker container ls
+docker ps
+docker stop 9259b6318b47
+docker ps
+docker run -dp 8080:80 nginx:latest
+docker ps
+docker stop 2d566f04f438
+docker start 2d566f04f438
+docker stop 2d566f04f438
+docker ps
+docker ps --help
+docker ps --all
+docker rm 0f10ef1fd3ac
+docker ps --all
+docker rm 9259b6318b47
+docker ps --all
+docker rm 4e30696de337 7ba4896df401
+docker rm $(docker ps -aq)
+docker ps --all
+docker run -dp 8080:80 nginx:latest
+docker ps -aq
+docker rm 3aeb94f8e6f1
+docker stop 3aeb94f8e6f1
+docker rm 3aeb94f8e6f1
+docker ps -a
+docker run --name first_docker -dp 8080:80 nginx:latest
+docker ps -a
+docker stop first_docker
+docker ps {{.ID}}
+docker ps || {{.ID}}
+docker ps || grep {{.ID}}
+docker ps
+docker start first_docker
+docker ps || grep {{.ID}}
+docker ps --format || grep {{.ID}}
+docker ps --format="{{.ID}}"
+docker ps "{{.ID}}"
+docker ps || grep "{{.ID}}"
+docker run --help
+docker ps -a
+docker rm first_docker
+docker stop first_docker
+docker rm first_docker
+docker ps -a
+docker run --name second_docker -dp 8080:80 nginx:latest
+rm docker_website
+docker ps -a
+docker stop second_docker
+docker rm second_docker
+cd docker_website
+docker run --name second_docker -v ${pwd}:/usr/share/nginx/html:ro -dp 8080:80 nginx:latest
+docker stop second_docker
+docker rm second_docker
+docker run --name second_docker -v ${pwd}:/usr/share/nginx/html:ro -dp 8080:80 nginx
+docker stop second_docker
+docker rm second_docker
+docker run --name docker_website -v ${pwd}:/usr/share/nginx/html:ro -dp 8080:80 nginx
+docker run --name docker_website -v $(pwd):/usr/share/nginx/html:ro -dp 8080:80 nginx:latest
+docker stop docker_website
+docker rm docker_website
+docker run --name docker_website -v $(pwd):/usr/share/nginx/html:ro -dp 8080:80 nginx:latest
+docker ps -aq
+docker exec -help
+docker exec -it docker_website bash
+docker stop docker_website
+docker rm docker_website
+docker run --name docker_website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
+docker exec -it docker_website zsh
+docker exec -it docker_website bash
+cd docker_website
+mv . ~/docker_website
+mv *. ~/docker_website
+mv .* ~/docker_website
+mv * ~/docker_website
+mv * ~/docker_website
+docker ps -a
+docker exec -it docker_website bash
+docker ps -a
+docker stop docker_website
+docker rm docker_website
+mv * ~/docker_website
+docker run --name docker_website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
+docker ps -a
+docker stop docker_website
+docker rm docker_website
+docker ps -a
+docker --help
+docker run --help
+docker run --name docker_website -v $(pwd):/usr/share/nginx/html -dp 8080:80 nginx:latest
+docker run --name docker_website_copy -v $(pwd):/usr/share/nginx/html -dp 8081:80 nginx:latest
+docker stop docker_website_copy
+docker rm docker_website_copy
+docker run --help
+docker run --name docker_website_copy --volumes-from docker_website -dp 8081:80 nginx:latest
+docker ps -a
+docker stop docker_website_copy docker_website
+docker rm docker_website_copy docker_website
+docker ps -a
+docker build --help
+docker image ls
+docker build --tag docker_website:latest .
+docker image ls
+docker ps -a
+docker run --name website -dp 8080:80 docker_website:latest
+docker ps -a
+docker stop website
+docker image ls
+cd docker_website
+cat ~/.zsh_history | grep docker
+cat ~/.zsh_history | grep docker | touch docker_cmds.txt
+vim docker_cmds.txt
+cat ~/.zsh_history | grep docker > touch docker_cmds.txt
+vim docker_cmds.txt
+cat ~/.zsh_history | grep docker > docker_cmds.txt
+vim docker_cmds.txt
+cd docker_website
+git remote add origin https://github.com/ganeshmb96/docker-website.git
+git remote add origin https://github.com/ganeshmb96/docker-website.git
+cd docker_website
+docker ps -a
+docker run --name postgresql -p 5432:5432 -e POSTGRES_PASSWORD=551196 -d postgres
+docker ps -a
+docker run --rm -p 5050:5050 thajeztah/pgadmin4
+docker stop postgres
+docker stop postgresql
+docker ps -a
+docker rm postgresql
+docker ps -a
+docker run --name postgresql -p 5432:5432 -e POSTGRES_PASSWORD=551196 -d postgres
+docker ps -a
+docker run --rm -p 5050:5050 thajeztah/pgadmin4
+docker ps -a
+docker stop postgresql
+docker ps -a
+cd docker_website
+vim docker_cmds.txt
+docker ps -a
+docker postgresql start
+docker postgres start
+mkdir postgres_docker
+cd postgres_docker/
+docker images
+docker ps -a
+docker postgres start
+docker start postgresql
+docker ps -a
+vim docker-compose.yml
+vim docker-compose.yml
+docker stop postgresql
+docker compose up
+docker ps -a
+vim docker-compose.yml
+cd postgres_docker/
+vim docker-compose.yml
+docker ps -a
+docker compose up
+cd postgres_docker
+docker compose up
+cd docker_website
+touch docker_commands.txt
+grep docker ~/.zsh_history >> ~/docker_website/docker_commands.txt
+vim docker_commands.txt
+grep docker ~/.zsh_history | awk '/docker/{print}'
+grep docker ~/.zsh_history | awk '/^docker/{print}'
+vim docker_commands.txt
+grep docker ~/.zsh_history | cut -d "
+rm docker_commands.txt
+touch docker_commands.txt
+grep docker ~/.zsh_history | cut -d "
